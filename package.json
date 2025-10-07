@@ -1,0 +1,15 @@
+{
+  "name": "playwright-102-assignment",
+  "version": "1.0.0",
+  "description": "LambdaTest Playwright 102 Assignment",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:chrome": "npx playwright test --project='Google Chrome'",
+    "test:firefox": "npx playwright test --project=firefox",
+    "install:browsers": "npx playwright install --with-deps",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2"
+  }
+}

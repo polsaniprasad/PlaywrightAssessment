@@ -1,0 +1,52 @@
+version: 0.1
+
+# 🔐 Secrets: names only (values live in HyperExecute → Secrets/Vault)
+secrets:
+  - LT_USERNAME
+  - LT_ACCESS_KEY
+
+# 🌱 Example env var you read in your tests (e.g., process.env.TEST_MESSAGE)
+env:
+  TEST_MESSAGE: "Welcome to LambdaTest HyperExecute!"
+
+# ✅ v0.1 requires a default OS; matrix below will override per task
+runson: linux
+
+# 🧮 Run at least two browser/OS combos (parallel)
+matrix:
+  runson: [linux, win]
+  browser: [chrome, firefox]
+
+pre:
+  - set -euxo pipefail
+  - echo "Node:" && node -v
+  - echo "npm:" && npm -v
+  - echo "Installing deps..."
+  - if [ -f package-lock.json ]; then npm ci --no-fund --no-audit; else npm install --no-fund --no-audit; fi
+  - echo "Installing Playwright browsers..."
+  - npx playwright install --with-deps
+
+# 📦 Cache deps between runs
+cache_directories:
+  - node_modules
+
+run:
+  command: |
+    echo "Runson=$runson  Browser=$browser"
+    if [ "$browser" = "chrome" ]; then
+      npx playwright test --project="Google Chrome"
+    else
+      npx playwright test --project=firefox
+    fi
+
+# 📎 Collect artifacts (reports, videos, traces, logs) from every task
+upload_artifacts:
+  - playwright-report
+  - test-results
+  - blob-report
+  - traces
+  - videos
+
+# ✅ Optional post step
+post:
+  - echo "🎯 Tests completed! Check artifacts on the dashboard."

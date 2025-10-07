@@ -1,0 +1,4 @@
+tasks:
+  - name: Install & Run Playwright
+    init: npm ci && npm run install:browsers
+    command: npm test
