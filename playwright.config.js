@@ -3,7 +3,7 @@ const config = {
   testDir: './tests',
   use: { headless: false ,
     screenshot : "on",
-  video : "on"
+    video : "retain-on-failure"
   },
   
   projects: [
