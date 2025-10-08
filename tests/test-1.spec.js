@@ -7,12 +7,8 @@ test('Simple Form Demo shows entered message', async ({ page }) => {
   await page.click("//*[contains(text(),'Simple Form Demo')]");
   await page.waitForTimeout(3000);
   await expect(page).toHaveURL(/simple-form-demo/); 
-  await page.waitForTimeout(3000);
-  await page.getByPlaceholder('Please enter your Message').fill(message); 
-  await page.waitForTimeout(3000);       
-  await page.getByRole('button', { name: 'Get Checked Value' }).click();  
-  await page.waitForTimeout(3000);      
+  await page.getByPlaceholder('Please enter your Message').fill(message);      
+  await page.getByRole('button', { name: 'Get Checked Value' }).click();      
   const yourMessagePanel = page.locator('#message');                         
-  await page.waitForTimeout(3000);
   await expect(yourMessagePanel).toContainText(message);
 });

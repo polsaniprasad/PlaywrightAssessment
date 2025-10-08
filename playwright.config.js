@@ -8,8 +8,8 @@ const config = {
   
   projects: [
     { name: 'Google Chrome', use: { channel: 'chrome' } },
-   { name: 'firefox', use: { browserName: 'firefox' } },
-   { name: 'webkit', use: { browserName: 'webkit' } }, // Safari engine
+    { name: 'firefox', use: { browserName: 'firefox' } },
+    { name: 'webkit', use: { browserName: 'webkit' } }, 
   ],
   reporter : [ ["dot"], ["json", {
      outputFile:"jsonReports/jsonReports.json" 

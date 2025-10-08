@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -43,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "Google Chrome",
         "name": "Google Chrome",
@@ -57,118 +57,12 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "updateSourceMethod": "patch",
+    "updateSourceMethod": "3way",
     "version": "1.55.0",
     "workers": 4,
     "webServer": null
   },
   "suites": [
-    {
-      "title": "test-1.spec.js",
-      "file": "test-1.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "Simple Form Demo shows entered message",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Google Chrome",
-              "projectName": "Google Chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 18826,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2025-10-08T02:02:50.436Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/prasad/Playwright_102/test-results/test-1-Simple-Form-Demo-shows-entered-message-Google-Chrome/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/prasad/Playwright_102/test-results/test-1-Simple-Form-Demo-shows-entered-message-Google-Chrome/video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "1a2527e30efb6467db03-089dbba578f5327d12ae",
-          "file": "test-1.spec.js",
-          "line": 3,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "test-2.spec.js",
-      "file": "test-2.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "test",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Google Chrome",
-              "projectName": "Google Chrome",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 12791,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2025-10-08T02:02:50.435Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "/Users/prasad/Playwright_102/test-results/test-2-test-Google-Chrome/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/prasad/Playwright_102/test-results/test-2-test-Google-Chrome/video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "9e1a91a5771884ba7742-b6840ecef51039d36fef",
-          "file": "test-2.spec.js",
-          "line": 3,
-          "column": 5
-        }
-      ]
-    },
     {
       "title": "test-3.spec.js",
       "file": "test-3.spec.js",
@@ -188,26 +82,21 @@
               "projectName": "Google Chrome",
               "results": [
                 {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 11564,
+                  "duration": 8217,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-10-08T02:02:50.437Z",
+                  "startTime": "2025-10-08T03:47:11.776Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
                       "path": "/Users/prasad/Playwright_102/test-results/test-3-test-Google-Chrome/test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/prasad/Playwright_102/test-results/test-3-test-Google-Chrome/video.webm"
                     }
                   ]
                 }
@@ -225,9 +114,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-10-08T02:02:50.077Z",
-    "duration": 47530.053,
-    "expected": 3,
+    "startTime": "2025-10-08T03:47:11.227Z",
+    "duration": 9608.078000000212,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

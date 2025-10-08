@@ -3,21 +3,19 @@ import { test, expect } from '@playwright/test';
 test('test', async ({ browser, page }) => {
   await page.goto('https://www.lambdatest.com/selenium-playground');
   await page.getByRole('link', { name: 'Input Form Submit' }).click();
-  await page.waitForTimeout(3000);
+   await page.waitForLoadState
+  await expect(page.locator("//h2[normalize-space()='Input form validations']")).toHaveText('Input form validations')
   await page.getByRole('button', { name: 'Submit' }).click();
   await page.waitForTimeout(3000);
-  
-   const company = page.locator('input[name="company"]');
+  const company = page.locator('input[name="company"]');
   const validity = await company.evaluate((el) => {
     return {
       valid: el.validity.valid,
       valueMissing: el.validity.valueMissing
     };
   });
-
 expect(validity.valid).toBeFalsy();
- expect(validity.valueMissing).toBeTruthy();
-
+expect(validity.valueMissing).toBeTruthy();
   await page.waitForTimeout(3000);
   await page.getByRole('textbox', { name: 'Name' }).fill('prasad');
   await page.getByRole('textbox', { name: 'Email*' }).fill('prasad@123.com');
@@ -31,5 +29,7 @@ expect(validity.valid).toBeFalsy();
   await page.getByRole('textbox', { name: 'City* State*' }).fill('test');
   await page.getByRole('textbox', { name: 'Zip Code*' }).fill('12344');
   await page.getByRole('button', { name: 'Submit' }).click();
-  await page.locator('body').press('Escape');
+  const successMsg = page.locator("//p[contains(text(),'Thanks for contacting us')]");
+  await expect(successMsg).toBeVisible();
+  await expect(successMsg).toHaveText("Thanks for contacting us, we will get back to you shortly.");
 });
