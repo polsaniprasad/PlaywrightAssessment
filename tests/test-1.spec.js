@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 
 test('Simple Form Demo shows entered message', async ({ page }) => {
   const message = process.env.TEST_MESSAGE || 'Welcome to LambdaTest';
-
   await page.goto('https://www.lambdatest.com/selenium-playground');
   await page.click("//*[contains(text(),'Simple Form Demo')]");
   await page.waitForTimeout(3000);
